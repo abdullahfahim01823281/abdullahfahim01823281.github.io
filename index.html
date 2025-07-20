@@ -737,7 +737,6 @@
  <amp-auto-ads type="adsense"
         data-ad-client="ca-pub-9518048464888130">
 </amp-auto-ads>
-    <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo-container">
@@ -745,7 +744,6 @@
                 <span class="logo-text">Abdullah Fahim</span>
             </a>
             
-            <!-- Desktop Menu -->
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link active">Home</a></li>
                 <li><a href="google-drive.html" class="nav-link">Google Drive</a></li>
@@ -754,7 +752,6 @@
                 <li><a href="all_data.html" class="nav-link">Insert Data</a></li>
             </ul>
 
-            <!-- Mobile Menu Toggle -->
             <div class="mobile-menu-toggle" id="mobileMenuToggle">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
@@ -763,7 +760,6 @@
         </div>
     </nav>
 
-    <!-- Mobile Menu Overlay -->
     <div class="mobile-menu-overlay" id="mobileMenuOverlay">
         <div class="mobile-menu">
             <a href="index.html" class="mobile-nav-link active">Home</a>
@@ -774,7 +770,6 @@
         </div>
     </div>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="particles">
             <div class="particle"></div>
@@ -791,7 +786,7 @@
             <div class="cta-buttons">
                 <a href="google-drive.html" class="cta-button">
                     <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 002-2H5a2 2 0 00-2-2z"/>
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5a2 2 0 012-2h4a2 2 0 012 2v0a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V7a2 2 0 012-2v0z"/>
                     </svg>
                     View My Files
@@ -806,7 +801,6 @@
         </div>
     </section>
 
-    <!-- Features Section -->
     <section class="features">
         <div class="container">
             <h2 class="section-title">What You'll Find</h2>
@@ -843,8 +837,199 @@
             </div>
         </div>
     </section>
+    
+    <style>
+        /* Styles from index.html to be integrated with necessary adjustments */
+        /* To avoid conflicts, consider adding a specific class or ID to the counter elements if they clash with existing styles */
+        .counter-section-wrapper {
+            padding: 6rem 0; /* Match features section padding for consistent spacing */
+            background: linear-gradient(135deg, #2d1b69 0%, #0f0f23 100%); /* Adjust background to flow with existing design */
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 50vh; /* Ensure it takes up some vertical space */
+            overflow: hidden;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-    <!-- Footer -->
+        .counter-section-wrapper .background-animation {
+            position: absolute; /* Changed from fixed to absolute for section containment */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0; /* Adjust z-index to be behind content but within section */
+        }
+
+        .counter-section-wrapper .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Adjust particle sizes and positions if needed to fit the new section */
+        .counter-section-wrapper .particle:nth-child(1) { width: 80px; height: 80px; left: 10%; top: 20%; animation-delay: 0s; }
+        .counter-section-wrapper .particle:nth-child(2) { width: 120px; height: 120px; left: 20%; top: 70%; animation-delay: 2s; }
+        .counter-section-wrapper .particle:nth-child(3) { width: 60px; height: 60px; left: 70%; top: 10%; animation-delay: 4s; }
+        .counter-section-wrapper .particle:nth-child(4) { width: 100px; height: 100px; left: 80%; top: 60%; animation-delay: 1s; }
+        .counter-section-wrapper .particle:nth-child(5) { width: 40px; height: 40px; left: 50%; top: 30%; animation-delay: 3s; }
+
+        .counter-container {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.08); /* Adjusted for dark background */
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); /* Darker shadow for contrast */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 500px;
+            width: 100%;
+            position: relative;
+            animation: slideIn 0.8s ease-out;
+            z-index: 1; /* Ensure content is above particles */
+        }
+
+        h1.counter-title { /* Added specific class to prevent conflict with other h1 */
+            color: #e2e8f0; /* Light text for dark background */
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: titlePulse 2s ease-in-out infinite;
+        }
+
+        .counter-card {
+            background: rgba(255, 255, 255, 0.05); /* Adjusted for dark background */
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Darker shadow */
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+        }
+
+        .counter-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent); /* Lighter shimmer */
+            transition: left 0.5s;
+        }
+
+        .counter-card:hover::before {
+            left: 100%;
+        }
+
+        .counter-label {
+            font-size: 1.2rem;
+            color: #cbd5e0; /* Light text */
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .counter-value {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .status-indicator {
+            background: rgba(255, 255, 255, 0.3); /* Softer indicator background */
+            box-shadow: none; /* Remove redundant shadow */
+        }
+
+        .status-online {
+            background: #4CAF50;
+            box-shadow: 0 0 8px rgba(76, 175, 80, 0.6); /* Slightly more prominent glow */
+        }
+
+        .status-total {
+            background: #2196F3;
+            box-shadow: 0 0 8px rgba(33, 150, 243, 0.6);
+        }
+
+        .connection-status {
+            background: rgba(255, 255, 255, 0.1); /* Adjusted for dark background */
+            color: #e2e8f0; /* Light text */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .connection-status.connected {
+            background: rgba(76, 175, 80, 0.3);
+            color: #90EE90; /* Brighter green */
+            border: 1px solid rgba(76, 175, 80, 0.5);
+        }
+
+        .connection-status.disconnected {
+            background: rgba(244, 67, 54, 0.3);
+            color: #FFA07A; /* Brighter red */
+            border: 1px solid rgba(244, 67, 54, 0.5);
+        }
+
+        .footer-text {
+            color: #94a3b8; /* Lighter grey for footer */
+        }
+
+        /* Loading spinner */
+        .spinner {
+            border: 3px solid rgba(255, 255, 255, 0.3); /* Lighter spinner for dark background */
+            border-top-color: #667eea;
+        }
+    </style>
+    <section class="counter-section-wrapper">
+        <div class="background-animation">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+
+        <div class="counter-container">
+            <div class="connection-status" id="connectionStatus">
+                <span class="spinner"></span> Connecting...
+            </div>
+            
+            <h1 class="counter-title">🌐 Visitor Analytics</h1>
+            
+            <div class="counter-card">
+                <div class="counter-label">
+                    Total Visitors
+                    <span class="status-indicator status-total"></span>
+                </div>
+                <div class="counter-value loading" id="totalVisitorCount">0</div>
+            </div>
+
+            <div class="counter-card">
+                <div class="counter-label">
+                    Currently Online
+                    <span class="status-indicator status-online"></span>
+                </div>
+                <div class="counter-value loading" id="currentVisitorCount">0</div>
+            </div>
+
+            <div class="footer-text">
+                Real-time visitor tracking
+            </div>
+        </div>
+    </section>
+
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-logo">
@@ -966,6 +1151,154 @@
             el.style.transition = `opacity 0.6s ease ${index * 0.2}s, transform 0.6s ease ${index * 0.2}s`;
             observer.observe(el);
         });
+    </script>
+    
+    <script type="module">
+        // Import Firebase functions
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+        import { getDatabase, ref, increment, runTransaction, onValue, set, onDisconnect } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-database.js";
+
+        // Your Firebase configuration
+        const firebaseConfig = {
+           apiKey: "AIzaSyBEy9eW29gxO-esm214DNzjcgJjUl_D-gk",
+           authDomain: "user-tracker-2.firebaseapp.com",
+           databaseURL: "https://user-tracker-2-default-rtdb.firebaseio.com",
+           projectId: "user-tracker-2",
+           storageBucket: "user-tracker-2.firebasestorage.app",
+           messagingSenderId: "264927136036",
+           appId: "1:264927136036:web:b012c3c83b66633fc28bb1",
+           measurementId: "G-GTC5M5X6WM"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        // Animation helper functions
+        function animateCounter(element, targetValue, duration = 1000) {
+            const startValue = parseInt(element.textContent) || 0;
+            const difference = targetValue - startValue;
+            const startTime = Date.now();
+
+            function updateCounter() {
+                const elapsed = Date.now() - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+                const currentValue = Math.round(startValue + (difference * easeOutQuart));
+                
+                element.textContent = currentValue;
+                
+                if (progress < 1) {
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.classList.add('updated');
+                    setTimeout(() => element.classList.remove('updated'), 600);
+                }
+            }
+            
+            updateCounter();
+        }
+
+        function updateConnectionStatus(connected) {
+            const statusElement = document.getElementById('connectionStatus');
+            if (connected) {
+                statusElement.className = 'connection-status connected';
+                statusElement.innerHTML = '🟢 Connected';
+            } else {
+                statusElement.className = 'connection-status disconnected';
+                statusElement.innerHTML = '🔴 Disconnected';
+            }
+        }
+
+        // Function to generate a unique session ID
+        function generateSessionId() {
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                const r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+                return v.toString(16);
+            });
+        }
+
+        // Update total visitor count with animation
+        function updateTotalVisitorCount() {
+            const counterRef = ref(db, 'totalVisitorCount');
+            runTransaction(counterRef, (currentCount) => {
+                return (currentCount || 0) + 1;
+            }).then((result) => {
+                if (result.committed) {
+                    const totalElement = document.getElementById('totalVisitorCount');
+                    totalElement.classList.remove('loading');
+                    animateCounter(totalElement, result.snapshot.val() || 0);
+                }
+            }).catch((error) => {
+                console.error('Total count transaction failed:', error);
+                document.getElementById('totalVisitorCount').classList.remove('loading');
+            });
+        }
+
+        // Manage current visitor count using Firebase presence
+        function manageCurrentVisitors() {
+            const sessionId = generateSessionId();
+            const userRef = ref(db, `currentVisitors/${sessionId}`);
+            const connectedRef = ref(db, '.info/connected');
+
+            // Monitor connection state
+            onValue(connectedRef, (snap) => {
+                const connected = snap.val() === true;
+                updateConnectionStatus(connected);
+                
+                if (connected) {
+                    // Add this session to currentVisitors
+                    set(userRef, { timestamp: Date.now() });
+                    // Remove this session when disconnected
+                    onDisconnect(userRef).remove();
+                }
+            });
+
+            // Update current visitor count display with animation
+            const currentVisitorsRef = ref(db, 'currentVisitors');
+            onValue(currentVisitorsRef, (snapshot) => {
+                const visitors = snapshot.val();
+                const count = visitors ? Object.keys(visitors).length : 0;
+                const currentElement = document.getElementById('currentVisitorCount');
+                currentElement.classList.remove('loading');
+                animateCounter(currentElement, count);
+            });
+        }
+
+        // Clean up stale sessions (older than 30 seconds)
+        function cleanupStaleSessions() {
+            const currentVisitorsRef = ref(db, 'currentVisitors');
+            onValue(currentVisitorsRef, (snapshot) => {
+                const visitors = snapshot.val();
+                if (visitors) {
+                    const now = Date.now();
+                    Object.keys(visitors).forEach((sessionId) => {
+                        const session = visitors[sessionId];
+                        if (now - session.timestamp > 30000) { // 30 seconds
+                            set(ref(db, `currentVisitors/${sessionId}`), null);
+                        }
+                    });
+                }
+            }, { onlyOnce: true });
+        }
+
+        // Initialize on page load with staggered animations
+        window.onload = () => {
+            setTimeout(() => {
+                updateTotalVisitorCount();
+            }, 500);
+            
+            setTimeout(() => {
+                manageCurrentVisitors();
+            }, 1000);
+            
+            setTimeout(() => {
+                cleanupStaleSessions();
+            }, 1500);
+        };
+
+        // Add periodic cleanup
+        setInterval(cleanupStaleSessions, 60000); // Clean up every minute
     </script>
 </body>
 </html>
